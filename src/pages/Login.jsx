@@ -5,23 +5,32 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoginMode, setIsLoginMode] = useState(true); // State to toggle between login and sign-up
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Perform authentication logic here (e.g., API call to authenticate user)
-    if (email === 'user@example.com' && password === 'password') {
-      // Example: Redirect to home page upon successful login
-      navigate('/');
+    if (isLoginMode) {
+      // Login logic
+      if (email === 'user@example.com' && password === 'password') {
+        navigate('/'); // Redirect on successful login
+      } else {
+        alert('Invalid email or password');
+      }
     } else {
-      alert('Invalid email or password');
+      // Sign-up logic (dummy example)
+      alert(`Signed up with: ${email}`);
+      setEmail('');
+      setPassword('');
+      setIsLoginMode(true); // Switch back to login mode after sign-up
     }
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
+    <div className="flex justify-center items-center h-screen bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
-        <h2 className="text-2xl mb-4">Login</h2>
+        <h2 className="text-2xl mb-4">{isLoginMode ? 'Login' : 'Sign Up'}</h2>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
             Email
@@ -48,10 +57,20 @@ const Login = () => {
         </div>
         <button
           type="submit"
-          className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 focus:outline-none focus:shadow-outline"
+          className=" text-white px-4 py-2 rounded  focus:outline-none focus:shadow-outline"
         >
-          Login
+          {isLoginMode ? 'Login' : 'Sign Up'}
         </button>
+        <p className="mt-4 text-sm">
+          {isLoginMode ? "Don't have an account? " : 'Already have an account? '}
+          <button
+            type="button"
+            onClick={() => setIsLoginMode((prev) => !prev)}
+            className="text-blue-500 underline"
+          >
+            {isLoginMode ? 'Sign Up' : 'Login'}
+          </button>
+        </p>
       </form>
     </div>
   );
