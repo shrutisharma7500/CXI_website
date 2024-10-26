@@ -1,148 +1,170 @@
 /* Contact.css */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .background-animation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1; /* Send the background behind the content */
-    backdrop-filter: blur(10px); /* Apply blur effect */
-  }
-  
-  .circle {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.7;
-    animation: move 10s infinite;
-  }
-  
-  @keyframes move {
-    0% {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 20px; /* Add padding for smaller screens */
+}
+
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Send the background behind the content */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: move 10s infinite;
+}
+
+@keyframes move {
+  0% {
       transform: translate(0, 0);
-    }
-    100% {
+  }
+  100% {
       transform: translate(calc(100vw - 100px), calc(100vh - 100px));
-    }
   }
-  
-  /* Add more colorful circles with different sizes and colors */
-  .circle-1 {
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255, 126, 95, 0.7);
-    top: 10%;
-    left: 10%;
-    animation-duration: 12s;
-  }
-  
-  .circle-2 {
-    width: 150px;
-    height: 150px;
-    background-color: rgba(254, 180, 123, 0.7);
-    top: 30%;
-    left: 20%;
-    animation-duration: 14s;
-  }
-  
-  .circle-3 {
-    width: 200px;
-    height: 200px;
-    background-color: rgba(150, 205, 255, 0.7);
-    top: 50%;
-    left: 50%;
-    animation-duration: 16s;
-  }
-  
-  .circle-4 {
-    width: 250px;
-    height: 250px;
-    background-color: rgba(100, 255, 155, 0.7);
-    top: 70%;
-    left: 80%;
-    animation-duration: 18s;
-  }
-  
-  /* Additional styles for header, form, etc. */
-  .header {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: black; /* Changed to black */
-  }
-  
-  h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-    color: black; /* Changed to black */
-  }
-  
-  p {
-    color: #000; /* Changed to black */
-  }
-  
+}
+
+/* Add more colorful circles with different sizes and colors */
+.circle-1 {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 126, 95, 0.7);
+  top: 10%;
+  left: 10%;
+  animation-duration: 12s;
+}
+
+.circle-2 {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(254, 180, 123, 0.7);
+  top: 30%;
+  left: 20%;
+  animation-duration: 14s;
+}
+
+.circle-3 {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(150, 205, 255, 0.7);
+  top: 50%;
+  left: 50%;
+  animation-duration: 16s;
+}
+
+.circle-4 {
+  width: 250px;
+  height: 250px;
+  background-color: rgba(100, 255, 155, 0.7);
+  top: 70%;
+  left: 80%;
+  animation-duration: 18s;
+}
+
+/* Additional styles for header, form, etc. */
+.header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black; /* Changed to black */
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: black; /* Changed to black */
+}
+
+p {
+  color: #000; /* Changed to black */
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column; /* Stack vertically on small screens */
+  align-items: center; /* Center align items */
+  margin-bottom: 10px;
+}
+
+.contact-info div {
+  color: black; /* Changed to black */
+  margin-bottom: 10px; /* Add spacing between contact info items */
+}
+
+.form-container {
+  background-color: white;
+  width: 100%; /* Use full width on smaller screens */
+  max-width: 500px; /* Limit maximum width */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  height: auto;
+}
+
+input,
+textarea {
+  width: 100%; /* Use 100% width */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #fcd34d; /* Tailwind yellow-500 */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #eab308; /* Tailwind yellow-600 */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
   .contact-info {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 10px;
+      flex-direction: row; /* Change to row on larger screens */
+      justify-content: center;
+      gap: 2rem; /* Add gap between items */
   }
-  
-  .contact-info div {
-    color: black; /* Changed to black */
-  }
-  
+
   .form-container {
-    background-color: white;
-     width:500px;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    height: auto;
+      max-width: 600px; /* Increase max width on larger screens */
   }
-  
-  input,
-  textarea {
-    width: 100%; /* Use 100% width */
-    max-width: 600px; /* Limit maximum width */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 10px;
+
+  h1 {
+      font-size: 3rem; /* Increase header size */
   }
-  
-  button {
-    background-color: #fcd34d; /* Tailwind yellow-500 */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+
+  h2 {
+      font-size: 2.5rem; /* Increase subheader size */
   }
-  
-  button:hover {
-    background-color: #eab308; /* Tailwind yellow-600 */
-  }
-  
+}

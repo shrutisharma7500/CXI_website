@@ -13,17 +13,10 @@ const Contact = () => {
       </div>
 
       {/* Header Section */}
-      <header className="header mb-10">
-        <h1>Contact Us</h1>
-        <p>We’d love to hear from you!</p>
-      </header>
-
-      {/* Contact Information Section */}
+   {/* Contact Information Section */}
       <section className=" text-center">
-        <h2>Get In Touch</h2>
-        <p className='font-serif'>
-          Whether you have a question, suggestion, or just want to say hi, feel free to reach out!
-        </p>
+        <h2 className='text-xl mt-12 bg-red-300 font-serif'>Get In Touch</h2>
+       
         <div className="contact-info">
           <div>
             <h3 className='font-bold'>Phone:</h3>
@@ -38,7 +31,7 @@ const Contact = () => {
 
       {/* Contact Form Section */}
       <section>
-        <h2>Send Us a Message</h2>
+        <h2 className='text-sm bg-blue-500'>SEND US A MESSAGE</h2>
         <div className="form-container">
           <form>
             <div>
