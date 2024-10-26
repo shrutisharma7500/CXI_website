@@ -10,18 +10,18 @@ const Blogcards = ({ blogs }) => {
   }, []);
 
   return (
-    <div className='grid md:grid-cols-3 sm:grid-cols-2'>
+    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4'>
       {blogs.map((blog) => (
         <Link
           key={blog.id}
           to={`/blog/${blog.id}`} // Navigate to individual blog page
-          className='bg-gray-200 p-5 shadow-lg rounded cursor-pointer ml-10 my-5 mr-5 hover:transform hover:scale-110 transition-transform duration-300'
+          className='bg-gray-200 p-5 shadow-lg rounded cursor-pointer hover:transform hover:scale-105 transition-transform duration-300'
           data-aos='fade-up' // AOS attribute for the animation effect
         >
           <div>
-            <img src={blog.image} alt="" className='w-full' />
+            <img src={blog.image} alt="" className='w-full h-48 object-cover rounded-md' />
           </div>
-          <h3 className='mt-4 mb-2 font-bold hover:text-blue-600 cursor-pointer'>
+          <h3 className='mt-4 mb-2 font-bold hover:text-blue-600'>
             {blog.title}
           </h3>
           <p className='mb-2 text-gray-600 flex items-center'>

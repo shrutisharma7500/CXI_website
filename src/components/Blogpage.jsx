@@ -13,7 +13,7 @@ const BlogPage = () => {
       try {
         const response = await axios.get('/blogs.json');
         setBlogs(response.data);
-      } catch (error) {  
+      } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
@@ -32,14 +32,18 @@ const BlogPage = () => {
   };
 
   return (
-    <div>
-      {/* category section */}
-      <div className='text-3xl lg:text-7xl text-black font-bold text-center'>BLOGS</div>
-      {/* blogcards section */}
+    <div className='max-w-screen-lg mx-auto px-4 py-8'>
+      {/* Category section */}
+      <h1 className='text-3xl sm:text-4xl lg:text-5xl text-black font-bold text-center mb-8'>
+        BLOGS
+      </h1>
+
+      {/* Blogcards section */}
       <div>
-        <Blogcards blogs={currentBlogs}/>
+        <Blogcards blogs={currentBlogs} />
       </div>
-      {/* pagination section */}
+
+      {/* Pagination section */}
       <div className="flex justify-center mt-4">
         <Pagination
           currentPage={currentPage}
